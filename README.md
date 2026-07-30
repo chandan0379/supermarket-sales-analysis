@@ -1,43 +1,46 @@
 # 🛒 Supermarket Sales Analysis
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
-  <img src="https://img.shields.io/badge/MySQL-Database-orange?logo=mysql">
-  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas">
-  <img src="https://img.shields.io/badge/Matplotlib-Visualization-green">
-  <img src="https://img.shields.io/badge/Seaborn-Statistical%20Plots-4C72B0">
-  <img src="https://img.shields.io/badge/Status-Completed-brightgreen">
+
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange?logo=mysql)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-success)
+![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Visualization-blueviolet)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
 </p>
 
 ---
 
-## 📖 Project Overview
+# 📖 Overview
 
-This project performs an end-to-end analysis of supermarket sales data using **Python**, **MySQL**, **Pandas**, **Matplotlib**, and **Seaborn**.
+This project performs an **end-to-end supermarket sales analysis** using **Python**, **MySQL**, **Pandas**, **Matplotlib**, and **Seaborn**.
 
-The dataset is imported into MySQL, queried using SQL, analyzed with Pandas, and visualized through informative charts to uncover business insights about customer behavior, product performance, payment methods, and sales trends.
+The dataset is imported into MySQL, queried using SQL, processed with Pandas, and visualized through multiple charts to identify sales trends, customer behavior, product performance, and business insights.
 
 ---
 
-## 🎯 Objectives
+# 🎯 Objectives
 
 - Import CSV data into MySQL
-- Perform SQL-based data analysis
-- Analyze customer purchasing behavior
-- Visualize important business metrics
-- Generate actionable business insights
+- Perform SQL Queries
+- Analyze customer purchasing behaviour
+- Visualize sales trends
+- Generate business insights
+- Practice Python Data Analysis workflow
 
 ---
 
-# 🛠 Tech Stack
+# 🛠️ Technologies Used
 
 | Technology | Purpose |
 |------------|---------|
-| Python | Data Analysis |
+| Python | Programming |
 | MySQL | Database |
-| SQL | Querying |
-| Pandas | Data Processing |
-| Matplotlib | Visualization |
+| SQL | Data Querying |
+| Pandas | Data Analysis |
+| Matplotlib | Data Visualization |
 | Seaborn | Statistical Visualization |
 | Git | Version Control |
 | GitHub | Project Hosting |
@@ -50,15 +53,16 @@ The dataset is imported into MySQL, queried using SQL, analyzed with Pandas, and
 Supermarket-Sales-Analysis/
 │
 ├── charts/
-│   ├── sales_by_city.png
-│   ├── sales_by_branch.png
-│   ├── product_line_sales.png
-│   ├── payment_distribution.png
-│   ├── customer_type.png
+│   ├── average_rating_by_product_line.png
+│   ├── correlation_heatmap.png
+│   ├── customer_type_distribution.png
 │   ├── gender_distribution.png
-│   ├── monthly_sales.png
+│   ├── monthly_sales_trend.png
+│   ├── payment_method_distribution.png
+│   ├── product_line_sales.png
 │   ├── rating_distribution.png
-│   └── correlation_heatmap.png
+│   ├── sales_by_branch.png
+│   └── sales_by_city.png
 │
 ├── data/
 │   └── supermarket_sales.csv
@@ -66,6 +70,7 @@ Supermarket-Sales-Analysis/
 ├── analysis.py
 ├── import_data.py
 ├── requirements.txt
+├── queries.sql
 ├── README.md
 └── .gitignore
 ```
@@ -74,10 +79,12 @@ Supermarket-Sales-Analysis/
 
 # 📊 Dataset Information
 
-- Total Records: **1000**
-- Total Columns: **17**
-- Database: **MySQL**
-- Data Source: Supermarket Sales Dataset
+| Item | Value |
+|------|-------|
+| Records | 1000 |
+| Original Columns | 17 |
+| Working DataFrame Columns | 18 |
+| Database | MySQL |
 
 ---
 
@@ -85,73 +92,91 @@ Supermarket-Sales-Analysis/
 
 ## 🏙 Sales by City
 
-![Sales by City](charts/sales_by_city.png)
+![](charts/sales_by_city.png)
 
 ---
 
 ## 🏢 Sales by Branch
 
-![Sales by Branch](charts/sales_by_branch.png)
+![](charts/sales_by_branch.png)
 
 ---
 
 ## 🛍 Sales by Product Line
 
-![Product Line](charts/product_line_sales.png)
+![](charts/product_line_sales.png)
 
 ---
 
 ## 💳 Payment Method Distribution
 
-![Payment](charts/payment_distribution.png)
+![](charts/payment_method_distribution.png)
 
 ---
 
 ## 👥 Customer Type Distribution
 
-![Customer Type](charts/customer_type.png)
+![](charts/customer_type_distribution.png)
 
 ---
 
 ## 🚻 Gender Distribution
 
-![Gender](charts/gender_distribution.png)
+![](charts/gender_distribution.png)
 
 ---
 
 ## 📅 Monthly Sales Trend
 
-![Monthly Sales](charts/monthly_sales.png)
+![](charts/monthly_sales_trend.png)
 
 ---
 
-## ⭐ Customer Rating Distribution
+## ⭐ Rating Distribution
 
-![Ratings](charts/rating_distribution.png)
+![](charts/rating_distribution.png)
 
 ---
 
 ## 🔥 Correlation Heatmap
 
-![Heatmap](charts/correlation_heatmap.png)
+![](charts/correlation_heatmap.png)
+
+---
+
+## 🌟 Average Rating by Product Line
+
+![](charts/average_rating_by_product_line.png)
+
+---
+
+# 📌 Project Highlights
+
+- Imported CSV dataset into MySQL.
+- Connected Python with MySQL.
+- Performed SQL-based analysis.
+- Used Pandas for data processing.
+- Created multiple business visualizations.
+- Identified sales trends and customer behaviour.
+- Built a complete end-to-end data analysis project.
 
 ---
 
 # 💡 Key Business Insights
 
-- Naypyitaw generated the highest total sales.
-- Food and Beverages was the highest-performing product category.
-- Sales remained balanced across all three branches.
-- Members and Normal customers contributed almost equally.
-- Customer ratings were consistently high across transactions.
+- Naypyitaw generated the highest sales.
+- Food & Beverages was the best-selling product category.
+- Customer ratings remained consistently high.
+- Sales were balanced across all branches.
 - Payment methods were evenly distributed.
-- Positive correlation exists between quantity purchased and total sales.
+- Member and Normal customers showed similar purchasing behaviour.
+- Quantity purchased positively influenced total sales.
 
 ---
 
 # 🚀 Getting Started
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/chandan0379/supermarket-sales-analysis.git
@@ -163,7 +188,13 @@ git clone https://github.com/chandan0379/supermarket-sales-analysis.git
 pip install -r requirements.txt
 ```
 
-## Run the Project
+## Import Dataset into MySQL
+
+```bash
+python import_data.py
+```
+
+## Run Analysis
 
 ```bash
 python analysis.py
@@ -174,8 +205,8 @@ python analysis.py
 # 📌 Future Improvements
 
 - Interactive Streamlit Dashboard
-- Sales Forecasting
 - Customer Segmentation
+- Sales Forecasting
 - KPI Dashboard
 - Export Reports to Excel/PDF
 
@@ -183,9 +214,9 @@ python analysis.py
 
 # 👨‍💻 Author
 
-**CHANDAN KUNDU**
+**Debjit Kanjilal**
 
-- GitHub: https://github.com/chandan0379
+GitHub: https://github.com/chandan0379
 
 ---
 

@@ -1,16 +1,31 @@
+from dotenv import load_dotenv
 import os
-os.makedirs("charts", exist_ok=True)
 import pandas as pd
 import mysql.connector
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load .env file
+load_dotenv()
+
+# Create charts folder
+os.makedirs("charts", exist_ok=True)
+
+# Read environment variables
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME", "supermarket_sales")
+
+# Uncomment temporarily to check if password is loading
+# print("Password:", DB_PASSWORD)
+
 # Connect to MySQL
 connection = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Kundu@0379",   # তোমার password
-    database="supermarket_sales"
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    database=DB_NAME
 )
 
 print("✅ Connected to MySQL!")

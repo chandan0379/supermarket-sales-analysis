@@ -1,21 +1,32 @@
+from dotenv import load_dotenv
+import os
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
 
+# Load environment variables
+load_dotenv()
+
 try:
+    # Database credentials
+    DB_HOST = os.getenv("DB_HOST", "localhost")
+    DB_USER = os.getenv("DB_USER", "root")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_NAME = os.getenv("DB_NAME", "supermarket_sales")
+
     # Connect to MySQL
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Kundu@0379",   # তোমার password দাও
-        database="supermarket_sales"
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
     )
 
     if connection.is_connected():
         print("✅ Connected to MySQL successfully!")
 
     # Read CSV
-    df = pd.read_csv("data/SuperMarket Analysis.csv")
+    df = pd.read_csv("data/supermarket_sales.csv")
 
     # Rename columns
     df.columns = [
@@ -70,8 +81,9 @@ except Error as e:
     print("❌ Error:", e)
 
 finally:
-    if 'cursor' in locals():
+    if "cursor" in locals():
         cursor.close()
-    if 'connection' in locals() and connection.is_connected():
+
+    if "connection" in locals() and connection.is_connected():
         connection.close()
         print("✅ MySQL connection closed.")

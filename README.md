@@ -214,7 +214,7 @@ python analysis.py
 
 # 👨‍💻 Author
 
-**Debjit Kanjilal**
+**Chandan Kundu **
 
 GitHub: https://github.com/chandan0379
 
